@@ -10,15 +10,15 @@ class Student:
   ----------
   id_iter: 
     used to generate incremental unique id
-  id : uuid
+  id: uuid
     id of the student (must be unique)
-  name : str
+  name: str
     name of the student
   """
 
   id_iter = itertools.count()
 
-  def __init__(self, name):
+  def __init__(self, name: str):
     """
     Constructs all the necessary attributes for the student object.
 
@@ -27,5 +27,5 @@ class Student:
       name : str
         name of the person
     """
-    self.id = next(self.id_iter)
-    self.name = name
+    self.id:   int = next(self.id_iter)
+    self.name: str = name
