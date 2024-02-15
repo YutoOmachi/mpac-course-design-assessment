@@ -26,7 +26,7 @@ if __name__ == "__main__":
   student1 = course_service.create_student("student1")  
   student2 = course_service.create_student("student2")
 
-  #enrol students to course1
+  #enroll students to course1
   course_service.enroll_student(course1.id, student1.id)  
   course_service.enroll_student(course1.id, student2.id)
 
@@ -44,8 +44,8 @@ if __name__ == "__main__":
   print("average grade for student2 in course1 is {avg}".format(avg = course_service.get_student_grade_avg(course1.id, student2.id)))
 
   #print the assignment average grade
-  print("avergae grade for assignment1 is: {avg}".format(avg = course_service.get_assignment_grade_avg(course1.id, assignment1.id)))  
-  print("avergae grade for assignment1 is: {avg}".format(avg = course_service.get_assignment_grade_avg(course1.id, assignment2.id)))  
+  print("average grade for assignment1 is: {avg}".format(avg = course_service.get_assignment_grade_avg(course1.id, assignment1.id)))  
+  print("average grade for assignment1 is: {avg}".format(avg = course_service.get_assignment_grade_avg(course1.id, assignment2.id)))  
 
   #get top five students in the course
   print("top five students (ids) in course1 is {top_five}".format(top_five = course_service.get_top_five_students(course1.id)))
