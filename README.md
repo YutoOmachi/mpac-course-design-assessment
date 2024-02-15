@@ -1,6 +1,9 @@
 # Course Management System
 You are asked to design a course management system. This system will help the faculty manage many courses, along with the enrolled students in each of the courses, and track their assignments.
 
+## Design Document and Assumptions
+Design Document and Assumptions are listed under [design-and-assumptions.md](./design-and-assumption.md)
+
 ## Requirements
 This assessment has to be done in Python language.
 
