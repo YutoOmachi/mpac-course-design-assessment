@@ -8,7 +8,7 @@ class TestCourse(unittest.TestCase):
 
   def test_create_course_zero(self):
     """Tests empty courses list."""
-    self.assertEqual(self.course_service.get_courses(), [], "The course should empty")
+    self.assertEqual(self.course_service.get_courses(), [], "The course should be empty")
 
   def test_create_course_single(self):
     """Tests adding one course."""
@@ -41,8 +41,7 @@ class TestCourse(unittest.TestCase):
 
     try:
       self.course_service.get_course_by_id(100)
-
-      self.fail("Getting course by id that does not exist should fail")
+      self.fail("Getting course by id that does not exist should throw an exception")
     except:
       self.assertEqual(len(self.course_service.get_courses()), 1, "There should be one course")
       self.assertTrue(course1 in self.course_service.get_courses(), "A course is missing")
@@ -64,14 +63,13 @@ class TestCourse(unittest.TestCase):
 
     try:
       self.course_service.delete_course(100)
-
-      self.fail("Deleting course that does not exist should fail")
+      self.fail("Deleting course that does not exist should throw an exception")
     except:
       self.assertEqual(len(self.course_service.get_courses()), 2, "There should be two courses")
       self.assertTrue(course1 in self.course_service.get_courses(), "A course is missing")
       self.assertTrue(course2 in self.course_service.get_courses(), "A course is missing")
 
-  def test_enrol_student_single(self):
+  def test_enroll_student_single(self):
     """Tests enrolling a student to a course."""
     course1  = self.course_service.create_course("CSCC69")
     student1 = self.course_service.create_student("s1")
@@ -81,7 +79,7 @@ class TestCourse(unittest.TestCase):
     self.assertEqual(len(course1.students_enrolled), 1, "There should be one student enrolled in the course")
     self.assertTrue(student1.id in course1.students_enrolled, "A student is missing in the course")
 
-  def test_enrol_student_multiple(self):
+  def test_enroll_student_multiple(self):
     """Tests enrolling students to a course."""
     course1  = self.course_service.create_course("CSCC69")
     student1 = self.course_service.create_student("s1")
@@ -94,7 +92,7 @@ class TestCourse(unittest.TestCase):
     self.assertTrue(student1.id in course1.students_enrolled, "A student is missing in the course")
     self.assertTrue(student2.id in course1.students_enrolled, "A student is missing in the course")
 
-  def test_enrol_student_fail(self):
+  def test_enroll_student_fail(self):
     """Tests enrolling duplicate students to a course."""
     course1  = self.course_service.create_course("CSCC69")
     student1 = self.course_service.create_student("s1")
@@ -131,7 +129,6 @@ class TestCourse(unittest.TestCase):
     student1 = self.course_service.create_student("s1")
     try:
       self.course_service.dropout_student(course1.id, student1.id)
-
       self.fail("It shoudl throw exception when dropping student from a course that he/she is not enrolled in")
     except:
       self.assertEqual(len(course1.students_enrolled), 0, "There should be no students enrolled in the course")

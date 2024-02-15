@@ -6,8 +6,8 @@ class TestAssignment(unittest.TestCase):
     """Perfroms initial setup before every test cases."""
     self.course_service = CourseServiceImpl()
     self.course         = self.course_service.create_course("CSCC69")
-    self.student1       = self.course_service.create_student("Tom")
-    self.student2       = self.course_service.create_student("Jay")
+    self.student1       = self.course_service.create_student("s1")
+    self.student2       = self.course_service.create_student("s2")
 
     self.course_service.enroll_student(self.course.id, self.student1.id)
     self.course_service.enroll_student(self.course.id, self.student2.id)
