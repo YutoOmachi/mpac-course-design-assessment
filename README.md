@@ -2,7 +2,12 @@
 You are asked to design a course management system. This system will help the faculty manage many courses, along with the enrolled students in each of the courses, and track their assignments.
 
 ## Design Document and Assumptions
-Design Document and Assumptions are listed under [design-and-assumptions.md](./design-and-assumption.md)
+Design Document and Assumptions are listed under [design-and-assumptions.md](./design-and-assumption.md).
+
+## How to run
+I have prepared a sample main file called [sample_main.py](./sample_main.py) that illustrates the expected flow of the function calls.
+
+For running the unit tests, run ```python3 -m unittest``` from the terminal.
 
 ## Requirements
 This assessment has to be done in Python language.
